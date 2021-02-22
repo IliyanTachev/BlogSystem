@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>SignUp</title>
+
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Main CSS-->
+    <link th:href="@{/css/signup_form.css}" rel="stylesheet" media="all">
+</head>
+
+<body style="background-color: black;">
+    <div class="page-wrapper p-t-100">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-heading">
+                    <svg width="247.2" height="54.1" viewBox="0 0 247.2 54.1" xmlns="http://www.w3.org/2000/svg" style="top:100px;position:relative;">
+                        <g id="svgGroup" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" stroke="#35DF79" stroke-width="0.50mm" fill="none" style="stroke:rgb(255,255,255);stroke-width:0.25mm;fill:none"><path d="M 139.6 0.9 L 176.4 42.3 L 176.4 0.1 L 177.4 0.1 L 177.4 54.1 L 176.4 54.1 L 176.4 43.8 L 138.6 1.4 A 1.348 1.348 0 0 0 138.496 1.306 Q 138.439 1.26 138.371 1.214 A 2.288 2.288 0 0 0 138.35 1.2 A 0.931 0.931 0 0 0 138.271 1.152 Q 138.189 1.109 138.126 1.102 A 0.22 0.22 0 0 0 138.1 1.1 A 0.155 0.155 0 0 0 138.015 1.124 Q 137.976 1.148 137.95 1.2 A 0.482 0.482 0 0 0 137.91 1.313 A 0.408 0.408 0 0 0 137.9 1.4 L 137.9 54.1 L 136.9 54.1 L 136.9 1.2 A 1.426 1.426 0 0 1 136.943 0.839 A 0.954 0.954 0 0 1 137.3 0.3 A 1.709 1.709 0 0 1 137.607 0.114 Q 137.83 0.011 138.054 0.001 A 1.068 1.068 0 0 1 138.1 0 A 1.351 1.351 0 0 1 138.492 0.055 A 1.152 1.152 0 0 1 138.8 0.2 A 2.705 2.705 0 0 1 138.985 0.336 Q 139.181 0.493 139.438 0.74 A 12.426 12.426 0 0 1 139.6 0.9 Z M 72.9 53.1 L 105.6 53.1 L 105.6 54.1 L 71.9 54.1 L 71.9 0.1 L 105.6 0.1 L 105.6 1.1 L 72.9 1.1 L 72.9 26.2 L 97.5 26.2 L 97.5 27.2 L 72.9 27.2 L 72.9 53.1 Z M 37.9 54.1 L 18 54.1 A 71.206 71.206 0 0 1 14.455 54.017 Q 12.778 53.933 11.343 53.764 A 29.695 29.695 0 0 1 9 53.4 A 18.532 18.532 0 0 1 6.678 52.787 Q 5.523 52.395 4.595 51.873 A 8.956 8.956 0 0 1 3.5 51.15 Q 1.5 49.6 0.75 47.15 A 15.671 15.671 0 0 1 0.244 44.851 Q 0.077 43.713 0.024 42.414 A 30.131 30.131 0 0 1 0 41.2 L 0 13.2 Q 0 6.1 3.2 3.1 A 8.075 8.075 0 0 1 5.664 1.583 Q 9.25 0.1 16 0.1 L 33.3 0.1 L 33.3 1.1 L 16 1.1 Q 9.309 1.1 5.914 2.69 A 7.511 7.511 0 0 0 4.1 3.85 A 8.017 8.017 0 0 0 2.009 6.924 Q 1.473 8.259 1.222 9.946 A 22.177 22.177 0 0 0 1 13.2 L 1 41.2 A 19.193 19.193 0 0 0 1.266 44.513 Q 1.957 48.449 4.45 50.4 Q 7.087 52.463 13.606 52.95 A 59.316 59.316 0 0 0 18 53.1 L 36.9 53.1 L 36.9 34 L 37.9 34 L 37.9 54.1 Z M 242.1 8.7 L 212.8 46.3 A 23.29 23.29 0 0 0 212.397 46.833 Q 211.991 47.388 211.75 47.8 A 2.305 2.305 0 0 0 211.517 48.377 Q 211.444 48.655 211.417 48.985 A 5.014 5.014 0 0 0 211.4 49.4 L 211.4 50.8 Q 211.4 51.961 211.847 52.468 A 1.118 1.118 0 0 0 212.05 52.65 Q 212.7 53.1 213.5 53.1 L 247.2 53.1 L 247.2 54.1 L 213.5 54.1 A 5.068 5.068 0 0 1 212.636 54.031 Q 212.173 53.951 211.81 53.777 A 2.194 2.194 0 0 1 211.15 53.3 Q 210.597 52.71 210.452 51.629 A 6.247 6.247 0 0 1 210.4 50.8 L 210.4 49.2 A 4.132 4.132 0 0 1 210.542 48.102 A 3.5 3.5 0 0 1 210.9 47.25 A 15.122 15.122 0 0 1 211.584 46.196 A 18.8 18.8 0 0 1 212.1 45.5 L 241.4 7.9 A 23.29 23.29 0 0 0 241.804 7.367 Q 242.21 6.813 242.45 6.4 A 2.305 2.305 0 0 0 242.683 5.823 Q 242.757 5.545 242.784 5.215 A 5.014 5.014 0 0 0 242.8 4.8 L 242.8 3.4 Q 242.8 2.239 242.354 1.732 A 1.118 1.118 0 0 0 242.15 1.55 Q 241.5 1.1 240.7 1.1 L 210.2 1.1 L 210.2 0.1 L 240.7 0.1 A 5.068 5.068 0 0 1 241.565 0.169 Q 242.028 0.249 242.391 0.423 A 2.194 2.194 0 0 1 243.05 0.9 Q 243.604 1.49 243.749 2.571 A 6.247 6.247 0 0 1 243.8 3.4 L 243.8 5 A 4.132 4.132 0 0 1 243.659 6.098 A 3.5 3.5 0 0 1 243.3 6.95 A 15.122 15.122 0 0 1 242.617 8.005 A 18.8 18.8 0 0 1 242.1 8.7 Z" vector-effect="non-scaling-stroke"/>
+                    </g>
+                    </svg>
+                    <div id="github-icon-wrapper">
+                        <a href="https://github.com/IliyanTachev/BlogSystem.git"><img th:src="@{/icons/github.svg}" height="50px" width="50px"/></a>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <h2 class="title">Registration Info</h2>
+                    <form th:action="@{/process_register}" th:object="${user}" method="post" autocomplete="off">
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Username" th:field="*{username}">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="email" placeholder="Email"  th:field="*{email}">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Password"  th:field="*{password}">
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="text" placeholder="Confirm Password"  th:field="*{confirmPassword}">
+                        </div>
+                        <div class="p-t-10">
+                            <button class="btn btn--pill btn--green" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+<!-- end document-->

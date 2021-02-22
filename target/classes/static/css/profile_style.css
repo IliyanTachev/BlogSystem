@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+}
+body{
+    background-color: #222831;
+    /*#171717*/
+}
+.navbar{
+    background-color: rgb(0,2,1);
+}
+
+.header-slogan {
+    text-align: center;
+}
+.navbar-search{
+    display: inline-block;
+    padding: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50px;
+    z-index: 10000;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 5px 0 rgb(255, 255, 255);
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    background-image: url("../images/alien-head.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.navbar-search:hover{
+    cursor: pointer;
+}
+
+.navbar-search > #search-icon{
+    color: white;
+}
+
+svg{
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.jumbotron-profile-image{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+
+.jumbotron-profile-username{
+    display: inline-block;
+    position: relative;
+    top: 20px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.jumbotron-profile-button{
+    float: right;
+    margin: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #30333A;
+    font-family: arial;
+}
+.jumbotron{
+    margin: 0;
+}
+
+#jumbotron-profile-follow-button {
+    position: absolute;
+    color: rgb(51, 153, 255);
+    font-family: "Helvetica";
+    font-size: 10pt;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid;
+    border-color: #3399FF;
+    border-radius: 40px;
+    width: 95px;
+    cursor: pointer;
+    top: 14%;
+    left: 240px;
+    height: 25px;
+    outline: none;
+}
+
+.jumbotron-profile-bio{
+    position: relative;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    width: 60%;
+    left: 10%;
+}
+
+.jumbotron-profile-bio:before {
+    content: "";
+    display: block;
+}
+
+/*Social media buttons*/
+ul.social-icons-list {
+    padding: 0;
+    text-align: right;
+}
+
+.social-icons-list li {
+    background-color: yellow;
+    list-style: none;
+    display: inline-block;
+    margin: 4px;
+    border-radius: 2em;
+    overflow: hidden;
+}
+
+.social-icons-list li a {
+    display: block;
+    padding: 0.5em;
+    min-width: 2.3em;
+    max-width: 1.28571429em;
+    white-space: nowrap;
+    line-height: 1.5em;
+    transition: 0.5s;
+    text-decoration: none;
+    font-family: arial;
+    color: #fff;
+}
+
+.social-icons-list li i {
+    margin-right: 0.5em;
+}
+
+.social-icons-list li:hover a {
+    max-width: 200px;
+    padding-right: 1em;
+}
+
+.social-icons-list .facebook {
+    background-color: #3b5998;
+    box-shadow: 0 0 16px #3b5998;
+}
+
+.social-icons-list .twitter {
+    background-color: #00aced;
+    box-shadow: 0 0 16px #00aced;
+}
+
+.social-icons-list .instagram {
+    background-color: #cd486b;
+    box-shadow: 0 0 16px #cd486b;
+}
+
+.social-icons-list .youtube {
+    background-color: #c92228;
+    box-shadow: 0 0 16px #c92228;
+}
+.profile-social-media-buttons{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid white;
+    border-radius: 40px;
+    padding: 10px;
+    background-color: #30333A;
+}
+
+.social-icons-list{margin: 0;}
+
+/* ------ page ------ */
+.profile-posts-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.page{
+    background-color:#fff;
+    padding:20px 15px;
+    position: relative;
+    width: 45%;
+    margin: 50px auto;
+    border-radius: 20px;
+    display: inline-block;
+    color: white;
+    height: 350px;
+}
+
+.page:hover .inner-wrapper{
+    transform: scale(1.2);
+    transition: all .5s;
+}
+
+.inner-wrapper:nth-child(1){
+    background-image: url("../images/dinosaurs-jurassic-world-fact-check-3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.page h3{
+    font-size:22px;
+    margin-bottom:12px;
+}
+.page p{
+    font-size:17px;
+    font-weight:500;
+}
+.page .details ul{
+    list-style: none;
+    padding-left: 0px;
+    margin-bottom:18px;
+}
+.page .details ul li{
+    float:left;
+    padding-right:15px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.page .details ul li:last-child {
+    float: inherit;
+}
+.page h4{
+    font-size:13px;
+    font-weight:600;
+}
