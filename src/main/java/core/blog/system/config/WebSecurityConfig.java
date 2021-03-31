@@ -12,6 +12,24 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests();
+        String[] resources = new String[]{
+            "/css/**",
+            "/js/**",
+            "/icons/**",
+            "/images/**"
+        };
+
+        http.csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/register", "/login").anonymous()
+                .antMatchers("/admin").hasAnyAuthority("ROOT_ADMIN", "ADMIN")
+                .antMatchers(resources).permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                .loginPage("/login")
+                .usernameParameter("username")
+                .passwordParameter("password")
+                .defaultSuccessUrl("/");
     }
 }

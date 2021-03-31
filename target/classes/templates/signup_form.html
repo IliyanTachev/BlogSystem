@@ -35,7 +35,7 @@
 
                 <div class="card-body">
                     <h2 class="title">Registration Info</h2>
-                    <form th:action="@{/process_register}" th:object="${user}" method="post" autocomplete="off">
+                    <form th:action="@{/register}" th:object="${user}" method="post" autocomplete="off">
                         <div class="input-group">
                             <input class="input--style-3" type="text" placeholder="Username" th:field="*{username}">
                         </div>

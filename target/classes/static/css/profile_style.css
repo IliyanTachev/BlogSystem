@@ -234,3 +234,44 @@ ul.social-icons-list {
     font-size:13px;
     font-weight:600;
 }
+
+.profile-posts-options{
+    overflow: hidden;
+}
+
+.btn-create-post{
+    float: right;
+    margin: 25px;
+}
+
+.modal-create-post{
+    display: none;
+    width: 50%;
+    position: fixed;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 20%;
+    z-index: 1;
+}
+
+#page-mask {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1;
+}
+
+.post-alert{
+    position: fixed;
+    top: 70px;
+    float: right;
+    display: none;
+    -webkit-box-shadow: 0px 0px 45px 16px rgb(0 0 0 / 45%);
+    -moz-box-shadow: 0px 0px 45px 16px rgba(0,0,0,0.75);
+    right: 20px;
+    z-index: 1;
+}

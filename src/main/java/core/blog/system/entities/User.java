@@ -1,24 +1,24 @@
 package core.blog.system.entities;
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity(name="users")
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
     private String email;
 
-    @Column
     private String username;
 
-    @Column
     private String password;
 
-    @Column
-    private String confirmPassword;
+    private Set<UserRole> roles;
 
+    private Set<Post> posts;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     public Long getId() {
         return id;
     }
@@ -27,6 +27,7 @@ public class User {
         this.id = id;
     }
 
+    @Column
     public String getEmail() {
         return email;
     }
@@ -35,6 +36,7 @@ public class User {
         this.email = email;
     }
 
+    @Column
     public String getUsername() {
         return username;
     }
@@ -43,6 +45,7 @@ public class User {
         this.username = username;
     }
 
+    @Column
     public String getPassword() {
         return password;
     }
@@ -51,12 +54,27 @@ public class User {
         this.password = password;
     }
 
-    public String getConfirmPassword() {
-        return confirmPassword;
+    @Column
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+    public Set<UserRole> getRoles() {
+        return roles;
     }
 
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
+    public void setRoles(Set<UserRole> roles) {
+        this.roles = roles;
+    }
+
+    
+    public Set<Post> getPosts() {
+        return posts;
+    }
+
+    public void setPosts(Set<Post> posts) {
+        this.posts = posts;
     }
 
     @Override
