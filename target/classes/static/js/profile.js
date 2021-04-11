@@ -31,11 +31,12 @@ $(document).ready(function (){
     });
 
     $("#create-post-form").submit(function (event){
+        let form = $(this);
         event.preventDefault();
         $.ajax({
             type: 'POST',
             url: '/posts/create',
-            data: $(this).serialize(),
+            data: form.serialize(),
             success: function(data){
                 if(data === "success") {
                     // Cleaning Post-creation View
@@ -43,6 +44,26 @@ $(document).ready(function (){
                     $("body").css("overflow", "auto");
                     $("#page-mask").hide();
                     $(".post-alert.alert-success").show();
+
+                    // Append new post
+                    $(".profile-posts-wrapper").append(
+                        '<div class="page">' +
+                        '<div class="inner-wrapper">'+
+                        '    <h3>' + form.find('input[name="title"]').val() + '</h3>'+
+                        '    <div class="details">'+
+                        '       <ul>'+
+                        '          <li>' + form.find('input[name="author"]').val() + '</li>'+
+                        '         <li>' + new Date() + '</li>'+
+                        '        <li>' + form.find('input[name="tags"]').val() + '</li>'+
+                        '   </ul>'+
+                        '       </div>'+
+                        '        <div class="content">'+
+                        '           <p>' + form.find('textarea[name="description"]').val() + '</p>'+
+                        '    </div>'+
+                        '   <h4><a href="read-more">Read More</a></h4>'+
+                        '    </div>' +
+                        '</div>'
+                    );
                 }
                 else alert("ERROR");
             }
@@ -55,5 +76,16 @@ $(document).ready(function (){
             $("#page-mask").hide();
             $("body").css("overflow", "auto");
         }
+    });
+
+    $(".page").hover(function (){
+        $(this).find(".post-options-overlay").first().fadeIn();
+        $(this).find(".inner-wrapper").css({
+            "border-top-left-radius": "unset",
+            "border-top-right-radius": "unset"
+        });
+    }, function(){
+        $(this).find(".post-options-overlay").first().hide();
+        $(this).find(".inner-wrapper").css("border-radius", "10px");
     });
 });

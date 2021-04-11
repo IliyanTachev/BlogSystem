@@ -2,6 +2,7 @@ package core.blog.system.services.impl;
 
 import core.blog.system.entities.User;
 import core.blog.system.entities.UserRole;
+import core.blog.system.models.binding.UserModel;
 import core.blog.system.models.binding.UserPostsModel;
 import core.blog.system.models.binding.UserRegisterModel;
 import core.blog.system.repositories.UserRepository;
@@ -47,7 +48,16 @@ public class UserServiceImpl implements UserService {
     }
 
     public UserPostsModel getUserWithPostsByUsername(String username){
-        return modelMapper.map(this.userRepository.findByUsername(username), UserPostsModel.class);
+        return modelMapper.map(this.getUserByUsername(username), UserPostsModel.class);
+    }
+
+    @Override
+    public User getUserByUsername(String username) {
+        return this.userRepository.findByUsername(username);
+    }
+
+    public void save(User user){
+        this.userRepository.save(user);
     }
 
     private Set<UserRole> getRegistrationRoles(){

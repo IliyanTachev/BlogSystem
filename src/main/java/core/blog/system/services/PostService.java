@@ -4,4 +4,5 @@ import core.blog.system.models.binding.PostModel;
 
 public interface PostService {
     void save(PostModel post);
+    PostModel getPostById(long postId);
 }

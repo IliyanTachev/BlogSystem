@@ -39,8 +39,8 @@ public class PostModel {
         this.author = author;
     }
 
-    public String getTags() {
-        return tags;
+    public String[] getTags() {
+        return tags.split(" ");
     }
 
     public void setTags(String tags) {

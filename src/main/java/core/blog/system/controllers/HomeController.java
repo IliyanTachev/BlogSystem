@@ -55,7 +55,7 @@ public class HomeController {
     public String showUserProfile(@PathVariable String username, Model model){
         UserPostsModel userWithPosts = this.userService.getUserWithPostsByUsername(username);
         model.addAttribute("profile_username", username);
-        model.addAttribute("posts", userWithPosts.);
+        model.addAttribute("posts", userWithPosts.getPosts());
         return "profile";
     }
 }

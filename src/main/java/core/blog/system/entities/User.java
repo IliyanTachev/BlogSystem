@@ -68,7 +68,8 @@ public class User {
         this.roles = roles;
     }
 
-    
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name="author_id")
     public Set<Post> getPosts() {
         return posts;
     }

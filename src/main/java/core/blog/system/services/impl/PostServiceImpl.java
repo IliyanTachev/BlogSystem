@@ -19,12 +19,16 @@ public class PostServiceImpl implements PostService {
         this.modelMapper = modelMapper;
     }
 
-
     @Override
     public void save(PostModel post) {
-        String formattedTags = post.getTags().replace(" ", ",");
+        String formattedTags = String.join(",", post.getTags());
         post.setTags(formattedTags);
         post.setCreatedOn(LocalDate.now());
         this.postRepository.save(modelMapper.map(post, Post.class));
+    }
+
+    public PostModel getPostById(long postId){
+        Post post = this.postRepository.findById(postId);
+        return modelMapper.map(post, PostModel.class);
     }
 }
