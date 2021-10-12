@@ -7,8 +7,6 @@ import core.blog.system.services.PostService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-
 @Service
 public class PostServiceImpl implements PostService {
     private final PostRepository postRepository;
@@ -23,7 +21,6 @@ public class PostServiceImpl implements PostService {
     public void save(PostModel post) {
         String formattedTags = String.join(",", post.getTags());
         post.setTags(formattedTags);
-        post.setCreatedOn(LocalDate.now());
         this.postRepository.save(modelMapper.map(post, Post.class));
     }
 

@@ -78,11 +78,11 @@
 }
 
 #like-unlike-buttons > i:nth-child(1){
-    margin-right: 50px;
+    margin-right: 40px;
 }
 
 #like-unlike-buttons > i:nth-child(2){
-    margin-left: 50px;
+    margin-left: 40px;
 }
 
 #post-rating > i {
@@ -94,4 +94,34 @@
     color: black;
     padding: 2px;
     border-radius: 3px;
+}
+
+#rating-choice-wrapper{
+    top: 20px;
+    position: relative;
+    width: 200px;
+    margin: 0 auto;
+    height: 30px;
+}
+
+#rating-choice-text{
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#rating-counters{
+    text-align: center;
+}
+
+#rating-counters > p{
+    display: inline-block;
+    color: white;
+}
+
+#rating-counters > p:nth-child(1){
+    margin-right: 65px;
+}
+
+#rating-counters > p:nth-child(2){
+    margin-left: 65px;
 }

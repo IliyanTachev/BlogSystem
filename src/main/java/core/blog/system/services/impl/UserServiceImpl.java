@@ -2,7 +2,6 @@ package core.blog.system.services.impl;
 
 import core.blog.system.entities.User;
 import core.blog.system.entities.UserRole;
-import core.blog.system.models.binding.UserModel;
 import core.blog.system.models.binding.UserPostsModel;
 import core.blog.system.models.binding.UserRegisterModel;
 import core.blog.system.repositories.UserRepository;

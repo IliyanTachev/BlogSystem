@@ -1,9 +1,6 @@
 package core.blog.system.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity(name="posts")
@@ -14,6 +11,10 @@ public class Post {
     private String author;
     private String tags;
     private LocalDate createdOn;
+    private int likesNumber;
+    private int dislikesNumber;
+    private long[] likedByUserIDs;
+    private long[] dislikedByUserIDs;
 
     public Post() {
     }
@@ -60,11 +61,30 @@ public class Post {
         this.tags = tags;
     }
 
+    @Column(name="created_on")
     public LocalDate getCreatedOn() {
         return createdOn;
     }
 
     public void setCreatedOn(LocalDate createdOn) {
         this.createdOn = createdOn;
+    }
+
+    @Column(name="likes_num")
+    public int getLikesNumber() {
+        return likesNumber;
+    }
+
+    public void setLikesNumber(int likesNumber) {
+        this.likesNumber = likesNumber;
+    }
+
+    @Column(name="dislikes_num")
+    public int getDislikesNumber() {
+        return dislikesNumber;
+    }
+
+    public void setDislikesNumber(int dislikesNumber) {
+        this.dislikesNumber = dislikesNumber;
     }
 }

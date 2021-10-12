@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head :: baseHead(~{::title}, ~{::link})">
+<head th:replace="fragments/head :: baseHead(~{::title}, ~{::link}, ~{::script})">
     <title th:text="${post.getTitle()}"></title>
     <link rel="stylesheet" th:href="@{/css/post_view.css}">
+    <script th:src="@{/js/post_view.js}"></script>
     <link rel="stylesheet" th:href="@{https://pro.fontawesome.com/releases/v5.10.0/css/all.css}" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 </head>
 <body>
@@ -25,10 +26,11 @@
         <div id="heading-separator"></div>
         <div id="post-details">
             <div id="post-creation-date">
-                <h6 th:text="'Date: ' + ${post.getCreatedOn()}"></h6>
+<!--                <h6 th:text="'Date: ' + ${#temporals.format(post.getCreatedOn(), 'MMM dd, YYYY')}"></h6>-->
+                <h6 th:text="'Date: ' + ${#temporals.format(post.getCreatedOn(), 'MMM dd, YYYY', 'en')}"></h6>
             </div>
             <div id="post-tags">
-                <div class="post-tag" th:each="tag: ${post.getTags()}">
+                <div class="post-tag" th:each="tag: ${post.getTags().split(' ')}">
                     <a th:href="${'/tags/' + tag}" th:text="${tag}" class="badge badge-success"></a>
                 </div>
             </div>
@@ -47,11 +49,19 @@
                 <i class="fas fa-star"></i>
             </div>
             <div id="like-unlike-buttons">
-                <i class="far fa-thumbs-up text-success"></i>
-                <i class="far fa-thumbs-down text-danger"></i>
+                <i class="far fa-thumbs-up text-success like-icon"></i>
+                <i class="far fa-thumbs-down text-danger unlike-icon"></i>
+                <div id="rating-counters">
+                    <p id="likes-counter" th:text="${post.getLikesNumber()}"></p>
+                    <p id="dislikes-counter" th:text="${post.getDislikesNumber()}"></p>
+                </div>
             </div>
+            <div id="rating-choice-wrapper"><h6 id="rating-choice-text"></h6></div>
             <button type="button" class="btn btn-primary mx-auto" style="margin-top: 50px;">Start a discussion</button>
         </div>
     </section>
+    
+    <!-- Hidden Data -->
+    <input type="hidden" id="post-id" th:value="${post.getId()}"/>
 </body>
 </html>

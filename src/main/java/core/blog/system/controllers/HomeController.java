@@ -23,7 +23,7 @@ public class HomeController {
     }
 
     @GetMapping
-    public String viewHomePage(Authentication authentication, Model model)
+    public String viewHomePage(Model model)
     {
         return "home";
     }
